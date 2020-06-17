@@ -1,20 +1,41 @@
 import React from 'react'
+import styled from 'styled-components'
+import '../App.css';
 
+const ErrorP = styled.p`
+font-size: .5rem;
+color: red;
+`
+
+const AppHeader = styled.header`
+background-color:grey;
+height:10vh;
+align-items:center;
+display:flex;
+justify-content:center;
+`
+
+const Title = styled.h1`
+text-transform: uppercase;
+color:darkgreen;
+`
+
+const Submit = styled.button`
+    width: 80px;
+`
 
 
 
 
 export default function Form(props) {
-    const { values, onInputChange, onCheckboxChange, onSubmit, errors } = props
+    const { values, onInputChange, onCheckboxChange, onSubmit, errors, disabled } = props
 
 
     return (
         <form onSubmit={onSubmit}>
-            <div>
-                <h2>Add a User</h2>
-
-                <button>submit</button>
-            </div>
+            <AppHeader>
+                <Title>Add a User</Title>
+            </AppHeader>
 
             <div className='form inputs'>
                 <h4>Details</h4>
@@ -35,7 +56,7 @@ export default function Form(props) {
                         value={values.email}
                         onChange={onInputChange}
                     />
-                        <p>{errors.email}</p>                
+                        <ErrorP>{errors.email}</ErrorP>                
                 </label>
 
                 <label>Password:&nbsp;
@@ -45,7 +66,7 @@ export default function Form(props) {
                         value={values.password}
                         onChange={onInputChange}
                     />
-                     <p>{errors.password}</p>                   
+                     <ErrorP>{errors.password}</ErrorP>                   
                 </label>
 
                 <label>Agree to Terms of Service:&nbsp;
@@ -56,8 +77,9 @@ export default function Form(props) {
                         checked={values.terms===true}
                         onChange={onCheckboxChange}
                     />
-                    <p>{errors.terms}</p>
+                    <ErrorP>{errors.terms}</ErrorP>
                 </label>
+                <Submit disabled={disabled}>submit</Submit>
             </div>
         </form>
 
