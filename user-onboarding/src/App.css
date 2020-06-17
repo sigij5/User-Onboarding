@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: black;
+  color:white;
 }
 
 .App-logo {
@@ -42,4 +44,14 @@
   flex-direction: column;
   align-items: center;
 
+}
+
+label {
+  font-size: 1.2rem;
+
+}
+
+h3{
+  font-size: 1.5rem;
+  color:darkgreen;
 }

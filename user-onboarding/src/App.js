@@ -3,7 +3,18 @@ import './App.css';
 import Form from './components/Form'
 import * as Yup from 'yup'
 import axios from 'axios';
+import styled from 'styled-components'
 
+
+const UserDiv = styled.div`
+  margin: 0% 5% 5% 5%;
+  background-color: grey;
+  padding:1%;
+  flex-flow: row wrap;
+  display:flex;
+  overflow:hidden;
+  border-radius:10%;
+`
 
 
 const formSchema = Yup.object().shape({
@@ -140,10 +151,10 @@ function App() {
         <h3>Users:</h3>
         {users.map(user => {
           return (
-            <div>
+            <UserDiv>
               {/* <h4>{user.name}</h4> */}
               <p>{JSON.stringify(user)}</p>
-            </div>  
+            </UserDiv>  
           )
         })}
     </div>

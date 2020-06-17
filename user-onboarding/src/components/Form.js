@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import '../App.css';
 
 const ErrorP = styled.p`
-font-size: .5rem;
+font-size: .7rem;
 color: red;
 `
 
@@ -38,7 +38,7 @@ export default function Form(props) {
             </AppHeader>
 
             <div className='form inputs'>
-                <h4>Details</h4>
+                <h4>Information:</h4>
 
                 <label>Name:&nbsp;
                     <input 
