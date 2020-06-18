@@ -56,7 +56,7 @@ export default function Form(props) {
                         value={values.email}
                         onChange={onInputChange}
                     />
-                        <ErrorP>{errors.email}</ErrorP>                
+                        <ErrorP id='email-error'>{errors.email}</ErrorP>                
                 </label>
 
                 <label>Password:&nbsp;
@@ -79,7 +79,7 @@ export default function Form(props) {
                     />
                     <ErrorP>{errors.terms}</ErrorP>
                 </label>
-                <Submit disabled={disabled}>submit</Submit>
+                <Submit id='submitBtn' disabled={disabled}>submit</Submit>
             </div>
         </form>
 
