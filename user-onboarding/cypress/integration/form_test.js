@@ -42,4 +42,14 @@ describe('Test Inputs and Buttons', () => {
         cy.get('p#email-error')
             .should('contain', 'Must be a valid email address')
      })
+
+    it('submit button disabled until everything filled correctly', () => {
+        cy.get('button#submitBtn')
+        .should('be.disabled')
+        cy.get('input[name=name]')
+        .type('test')
+        cy.get('button#submitBtn')
+        .should('be.disabled')
+        
+    })
 })
